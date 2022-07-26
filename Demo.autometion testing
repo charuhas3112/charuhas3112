@@ -1,0 +1,47 @@
+package RegisterPage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Start {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selinum Web Driver\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("http://demo.automationtesting.in/Register.html");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/input[1]")).sendKeys("Charuhas");
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/input[1]")).sendKeys("Shelke");
+		
+		driver.findElement(By.tagName("textarea")).sendKeys("Byculla");
+		
+		driver.findElement(By.xpath("//body/section[@id='section']/div[1]/div[1]/div[2]/form[1]/div[3]/div[1]/input[1]")).sendKeys("charu@123.com");
+		
+		driver.findElement(By.xpath("//body/section[@id='section']/div[1]/div[1]/div[2]/form[1]/div[4]/div[1]/input[1]")).sendKeys("9999999999");
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[2]/form[1]/div[5]/div[1]/label[1]/input[1]")).click();
+		
+		driver.findElement(By.xpath("//input[@id='checkbox1']")).click();
+		
+		driver.findElement(By.xpath("//input[@id='firstpassword']")).sendKeys("charu123");
+		
+		driver.findElement(By.xpath("//input[@id='secondpassword']")).sendKeys("charu123");
+		
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[3]/div[2]/input[1]']")).click();
+		driver.findElement(By.xpath("//button[@id='submitbtn']")).click();
+		//driver.findElement(By.xpath("//button[@id='Button1']")).click();
+		
+		
+		
+		Thread.sleep(3000);
+		driver.close();
+
+	}
+
+}
